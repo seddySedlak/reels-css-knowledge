@@ -1,0 +1,112 @@
+:root {
+    --bg-color: #161616;
+    --card-bg: #212121;
+    --text-main: #fcfcfc;
+    --text-muted: #cfcfcf;
+    --accent-blue: #006dff;
+    --circle-inactive: #464646;
+    --card-bg-active: #2c2c2c;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: "League Spartan", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.card {
+    width: 100%;
+    max-width: 400px;
+}
+h1 {
+    font-size: 36px; 
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+.subtitle {
+    text-align: center; 
+    color: var(--text-muted); 
+    font-size: 24px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding: 18px 20px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+.row:hover {
+    background-color: var(--card-bg-active);
+}
+.code {
+    font-family: 'Fira Code', monospace;
+    font-size: 15px;
+    color: var(--text-main);
+    width: 130px;
+}
+.track {
+    flex-grow: 1; 
+    height: 6px; 
+    background-color: var(--circle-inactive);
+    border-radius: 10px;
+    position: relative;
+}
+.ball {
+    width: 20px; 
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--accent-blue);
+    box-shadow: 0 0 12px rgba(0, 109, 255, 0.6);
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%);
+    animation-name: moveBall;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes moveBall {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: calc(100% - 20px);
+    }
+}
+/* Linea */
+#tf-linear .ball { animation-timing-function: linear; }
+
+/* Ease */
+#tf-ease .ball { animation-timing-function: ease; }
+
+/* Ease-In */
+#tf-ease-in .ball { animation-timing-function: ease-in; }
+
+/* Ease-Out */
+#tf-ease-out .ball { animation-timing-function: ease-out; }
+
+/* Ease-In-Out */
+#tf-ease-in-out .ball { animation-timing-function: ease-in-out; }
+
+/* Cubic Bezier */
+#tf-bezier .ball { animation-timing-function: cubic-bezier(.17,.67,.83,.67); }
+
+/* Steps */
+#tf-steps .ball { animation-timing-function: steps(5, jump-none); }/* --- TVŮJ PŮVODNÍ ZÁKLAD (Neměněno) --- */
