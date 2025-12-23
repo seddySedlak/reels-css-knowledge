@@ -90,7 +90,8 @@ h1 {
         left: calc(100% - 20px);
     }
 }
-/* Linea */
+
+/* Linear */
 #tf-linear .ball { animation-timing-function: linear; }
 
 /* Ease */
